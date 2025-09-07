@@ -21,27 +21,18 @@ Assessment Task Manager adalah aplikasi manajemen tugas yang menyediakan antarmu
 
 ## ✨ Fitur
 
--   ✅ Manajemen tugas dengan status (To Do, In Progress, Done)
--   👥 Manajemen pengguna (User management)
+-   ✅ Manajemen tugas dengan status
+-   👥 Manajemen pengguna
 -   📂 Kategori tugas
 -   ⚡ Prioritas tugas
 -   📅 Pelacakan deadline
--   📊 Dashboard dengan statistik tugas
 
 ## 🛠️ Teknologi
 
 -   **Laravel 10** - PHP Framework
--   **Filament PHP** - Admin Panel
+-   **Filament V3.3 PHP** - Admin Panel
 -   **MySQL** - Database
 -   **Tailwind CSS** - Styling
-
-## 📋 Persyaratan Sistem
-
--   PHP 8.1 atau lebih baru
--   Composer
--   MySQL 5.7+ atau MariaDB 10.3+
--   Web server (Apache/Nginx)
--   Node.js dan NPM (untuk asset compilation)
 
 ## 🚀 Instalasi
 
