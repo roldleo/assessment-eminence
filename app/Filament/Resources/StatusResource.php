@@ -41,8 +41,11 @@ class StatusResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                Tables\Columns\TextColumn::make('is_active')
+                    ->label('Status')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => $state ? 'Active' : 'Inactive')
+                    ->color(fn ($state) => $state ? 'success' : 'danger'),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),
@@ -84,6 +87,7 @@ class StatusResource extends Resource
         ];
     }
 
+    // Hanya bisa diakses oleh Admin
     public static function shouldRegisterNavigation(): bool
     {
         return auth()->check() && auth()->user()->isAdmin();

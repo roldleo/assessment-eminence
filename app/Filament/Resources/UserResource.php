@@ -25,6 +25,7 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    // Hanya bisa diakses oleh Admin
     public static function shouldRegisterNavigation(): bool
     {
         return auth()->check() && auth()->user()->isAdmin();

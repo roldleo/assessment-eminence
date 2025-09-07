@@ -41,7 +41,9 @@ class SeverityResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('color')
-                    ->searchable(),
+                    ->label('Color')
+                    ->formatStateUsing(fn ($state) => view('color-circle', ['color' => $state]))
+                    ->html(),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),
@@ -83,6 +85,7 @@ class SeverityResource extends Resource
         ];
     }
 
+    // Hanya bisa diakses oleh Admin
     public static function shouldRegisterNavigation(): bool
     {
         return auth()->check() && auth()->user()->isAdmin();

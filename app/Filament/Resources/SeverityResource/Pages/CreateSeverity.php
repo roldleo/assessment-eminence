@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateSeverity extends CreateRecord
 {
     protected static string $resource = SeverityResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
