@@ -61,10 +61,10 @@ Assessment Task Manager adalah aplikasi manajemen tugas yang menyediakan antarmu
 
 ## 🔐 Akun Default
 
-Admin
+Admin =>
 Email: admin@task.com
 Passowrd: admin123
 
-Developer
+Developer =>
 Email: dev@task.com
 Password: developer123
