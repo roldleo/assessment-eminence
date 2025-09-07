@@ -7,6 +7,7 @@ use Filament\Actions;
 use App\Models\Status;
 use Filament\Resources\Pages\EditRecord;
 use Filament\Facades\Filament;
+use Carbon\Carbon;
 
 class EditTask extends EditRecord
 {
@@ -34,7 +35,12 @@ class EditTask extends EditRecord
                 ->label($status->name)
                 ->color($this->getStatusColor($status->name))
                 ->action(function () use ($status) {
-                    $this->record->update(['status_id' => $status->id]);
+                    $data = ['status_id' => $status->id];
+                    // Jika Complete, maka finish date di update
+                    if (strtolower($status->name) === 'completed') {
+                        $data['finish_date'] = Carbon::now();
+                    }
+                    $this->record->update($data);
                     return redirect(request()->header('Referer'));
                 });
         }
